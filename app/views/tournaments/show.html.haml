@@ -1,0 +1,12 @@
+#tournament_show.row
+	.col-md-8.col-md-offset-2
+		.panel.panel-default
+			.panel-heading.tournament_image
+				= image_tag @tournament.image.url(:medium)
+			.panel-body
+				%h1= @tournament.title
+				%p.description= @tournament.description
+				-if user_signed_in?			
+					.btn-group.pull-right
+						=link_to "Edit", edit_tournament_path, class: "btn btn-default"
+						=link_to "Delete", tournament_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"

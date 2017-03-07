@@ -1,0 +1,6 @@
+#tournaments.transitions-enabled
+	- @tournaments.each do |tournament|
+		.box.panel.panel-default
+			= link_to (image_tag tournament.image.url), tournament
+			%h2= link_to tournament.title, tournament
+
